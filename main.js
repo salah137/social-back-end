@@ -85,7 +85,7 @@ app.post("/posts/create", async (req, res) => {
     res.json(await posts.addPost(req.body.title, req.body.authorId, req.body.images))
 })
 
-app.patch("/pIosts/edit", async (req, res) => {
+app.patch("/posts/edit", async (req, res) => {
     res.json(await posts.updatePost(req.query.id, req.body.title, req.body.content, req.body.images))
 });
 
