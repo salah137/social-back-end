@@ -9,7 +9,7 @@ const jwtSecretKey = (process.env.JWT_SECRET_KEY);
 
 async function signUp(name, email, password, bio) {
     const hashedPassword = await argon2.hash(password);
-
+    console.log(name, email, password, bio);
     try {
         console.log(email)
 
