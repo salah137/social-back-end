@@ -15,7 +15,7 @@ app.use("/posts", (req, res, next) => {
     console.log(authHeader);
     if (authHeader == null) return res.sendStatus(401);
 
-    jwt.verify(authHeader, Buffer.from(process.env.JWT_SECRET_KEY), (err, user) => {
+    jwt.verify(authHeader, (process.env.JWT_SECRET_KEY), (err, user) => {
         console.log(err);
 
         if (err) return res.sendStatus(403);
